@@ -13,7 +13,6 @@ services:
     build: django/
     image: django:latest
     container_name: django-application
-    command: gunicorn --workers 3 --bind unix:/socks/mysite.sock mysite.wsgi:application
     depends_on:
       - nginx
     volumes:
